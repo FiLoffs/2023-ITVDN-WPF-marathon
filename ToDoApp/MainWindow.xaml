@@ -1,0 +1,28 @@
+﻿<Window x:Class="ToDoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="ToDO Application" Height="450" Width="409" Closed="Window_Closed" Loaded="Window_Loaded">
+    <Grid Background="#FF242424">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="325*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="ToDoListBox" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="12,8,12,8" MouseDoubleClick="ToDoListBox_MouseDoubleClick" Background="#FF383838" Foreground="WhiteSmoke" FontSize="14" BorderBrush="{x:Null}" SelectionChanged="ToDoListBox_SelectionChanged"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button x:Name="addButton" Content="Add" Margin="12,0,8,12" Padding="8,1,8,1" Click="addButton_Click" Width="96" Background="#FF383838" Foreground="WhiteSmoke" BorderBrush="{x:Null}" MouseEnter="addButton_MouseEnter" MouseLeave="addButton_MouseLeave"/>
+            <Button x:Name="completeButton" Content="Finish" Margin="0,0,8,12" Padding="8,1,8,1" Width="96" Click="completeButton_Click" Background="#FF383838" Foreground="WhiteSmoke" BorderBrush="{x:Null}" MouseEnter="completeButton_MouseEnter" MouseLeave="completeButton_MouseLeave"/>
+            <Button x:Name="deleteButton" Content="Delete" Margin="0,0,0,12" Padding="8,1,8,1" Width="96" Click="deleteButton_Click" Background="#FF383838" Foreground="WhiteSmoke" BorderBrush="{x:Null}" MouseEnter="deleteButton_MouseEnter" MouseLeave="deleteButton_MouseLeave"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton x:Name="allRadioButton" Content="All" Margin="12,12,8,0" Checked="allRadioButton_Checked" Background="DimGray" Foreground="WhiteSmoke" BorderBrush="{x:Null}"/>
+            <RadioButton x:Name="notCompletedRadioButton" Content="Not completed" Margin="0,12,8,0" Checked="notCompletedRadioButton_Checked" Background="DimGray" Foreground="WhiteSmoke" BorderBrush="{x:Null}"/>
+            <RadioButton x:Name="completedRadioButton" Content="Completed" Margin="0,12,0,0" Checked="completedRadioButton_Checked" Background="DimGray" Foreground="WhiteSmoke" BorderBrush="{x:Null}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
